@@ -1,16 +1,15 @@
-# node-js-getting-started
+# scrum-pointing-poker
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A Node.js app using [Express 4](http://expressjs.com/).
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+[Heroku App](https://scrum-pointing-poker.herokuapp.com/).
 
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ git clone git@github.com:cristianemoyano/scrum-pointing-poker.git # or clone your own fork
 $ npm install
 $ npm start
 ```
@@ -20,7 +19,7 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 ## Deploying to Heroku
 
 ```
-$ heroku create
+$ heroku create <name>
 $ git push heroku master
 $ heroku open
 ```
