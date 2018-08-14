@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+  May Node and Express be with you.
+
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %></span>
+      <span><%= quotes[i].quote %></span>
+   <button onclick="handlerUpdateItem('<%= quotes[i]._id %>')">Update</button>  
+   <button onclick="handlerDeleteItem('<%= quotes[i]._id %>')">Delete</button>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+<div>
+  <h2>Update Darth Vadar's first quote</h2>
+  <input type="text" placeholder="Name" id="update_input_name"/>
+  <input type="text" placeholder="Name" id="update_input_quote"/>
+</div>
+  
+<script src="main.js"></script>
+</body>
+</html>
