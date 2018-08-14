@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser= require('body-parser')
 const app = express();
 const db_url = 'mongodb://ds121332.mlab.com:21332/scrum_pointing_poker_db'
+const PORT = process.env.PORT || 5000
 
 const mongoose = require('mongoose');
 
@@ -28,9 +29,8 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-app.listen(3000, function() {
-  console.log('listening on 3000')
-})
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
 app.get('/', (req, res) => {
   var query = QuoteModel.find({});
     query.exec(function (err, docs) {
@@ -51,7 +51,7 @@ app.put('/quotes', (req, res) => {
  console.log(query)
  console.log(request)
  QuoteModel.findOneAndUpdate(
-  query, 
+  query,
   request,
   {
     sort: {_id: -1},
