@@ -2,15 +2,18 @@ console.log('May Node be with you')
 const express = require('express');
 const bodyParser= require('body-parser')
 const app = express();
-const db_url = 'mongodb://ds121332.mlab.com:21332/scrum_pointing_poker_db'
+const db_url = process.env.DB_URL
+const db_user = process.env.DB_USER
+const db_pass = process.env.DB_PASS
 const PORT = process.env.PORT || 5000
+
 
 const mongoose = require('mongoose');
 
 mongoose.connect(db_url, {
   auth: {
-    user:'mongo_clifford',
-    password:'!6%JHVB7h4mC'
+    user: db_user,
+    password: db_pass
   },
   useNewUrlParser:true
 }, function(err, client) {
